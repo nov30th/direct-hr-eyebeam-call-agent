@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="UploadProcessLog">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="computername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fullname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="keywords" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="windowsname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="processname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="processpath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadProcessLogResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="blackList">
+        <s:complexType />
+      </s:element>
+      <s:element name="blackListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blackListResult" type="tns:ProgramBlackList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ProgramBlackList">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="BlockApplication_Id" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="ApplicationName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WindowName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="IsMustBeSame" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="MatchFileName" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="MatchWindowName" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExceptionUsers" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Memo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetBlackList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fullname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBlackListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBlackListResult" type="tns:ArrayOfProgramBlackList" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProgramBlackList">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProgramBlackList" nillable="true" type="tns:ProgramBlackList" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProgramBlackList" nillable="true" type="tns:ProgramBlackList" />
+      <s:element name="ArrayOfProgramBlackList" nillable="true" type="tns:ArrayOfProgramBlackList" />
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UploadProcessLogSoapIn">
+    <wsdl:part name="parameters" element="tns:UploadProcessLog" />
+  </wsdl:message>
+  <wsdl:message name="UploadProcessLogSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadProcessLogResponse" />
+  </wsdl:message>
+  <wsdl:message name="blackListSoapIn">
+    <wsdl:part name="parameters" element="tns:blackList" />
+  </wsdl:message>
+  <wsdl:message name="blackListSoapOut">
+    <wsdl:part name="parameters" element="tns:blackListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBlackListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBlackList" />
+  </wsdl:message>
+  <wsdl:message name="GetBlackListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBlackListResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadProcessLogHttpPostIn">
+    <wsdl:part name="computername" type="s:string" />
+    <wsdl:part name="fullname" type="s:string" />
+    <wsdl:part name="keywords" type="s:string" />
+    <wsdl:part name="windowsname" type="s:string" />
+    <wsdl:part name="processname" type="s:string" />
+    <wsdl:part name="processpath" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UploadProcessLogHttpPostOut" />
+  <wsdl:message name="blackListHttpPostIn" />
+  <wsdl:message name="blackListHttpPostOut">
+    <wsdl:part name="Body" element="tns:ProgramBlackList" />
+  </wsdl:message>
+  <wsdl:message name="GetBlackListHttpPostIn">
+    <wsdl:part name="fullname" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetBlackListHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfProgramBlackList" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="BlackListSoap">
+    <wsdl:operation name="UploadProcessLog">
+      <wsdl:input message="tns:UploadProcessLogSoapIn" />
+      <wsdl:output message="tns:UploadProcessLogSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="blackList">
+      <wsdl:input message="tns:blackListSoapIn" />
+      <wsdl:output message="tns:blackListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBlackList">
+      <wsdl:input message="tns:GetBlackListSoapIn" />
+      <wsdl:output message="tns:GetBlackListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="BlackListHttpPost">
+    <wsdl:operation name="UploadProcessLog">
+      <wsdl:input message="tns:UploadProcessLogHttpPostIn" />
+      <wsdl:output message="tns:UploadProcessLogHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="blackList">
+      <wsdl:input message="tns:blackListHttpPostIn" />
+      <wsdl:output message="tns:blackListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBlackList">
+      <wsdl:input message="tns:GetBlackListHttpPostIn" />
+      <wsdl:output message="tns:GetBlackListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BlackListSoap" type="tns:BlackListSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UploadProcessLog">
+      <soap:operation soapAction="http://tempuri.org/UploadProcessLog" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="blackList">
+      <soap:operation soapAction="http://tempuri.org/blackList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlackList">
+      <soap:operation soapAction="http://tempuri.org/GetBlackList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BlackListSoap12" type="tns:BlackListSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UploadProcessLog">
+      <soap12:operation soapAction="http://tempuri.org/UploadProcessLog" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="blackList">
+      <soap12:operation soapAction="http://tempuri.org/blackList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlackList">
+      <soap12:operation soapAction="http://tempuri.org/GetBlackList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BlackListHttpPost" type="tns:BlackListHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="UploadProcessLog">
+      <http:operation location="/UploadProcessLog" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="blackList">
+      <http:operation location="/blackList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBlackList">
+      <http:operation location="/GetBlackList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BlackList">
+    <wsdl:port name="BlackListSoap" binding="tns:BlackListSoap">
+      <soap:address location="http://localhost:3443/BlackList.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BlackListSoap12" binding="tns:BlackListSoap12">
+      <soap12:address location="http://localhost:3443/BlackList.asmx" />
+    </wsdl:port>
+    <wsdl:port name="BlackListHttpPost" binding="tns:BlackListHttpPost">
+      <http:address location="http://localhost:3443/BlackList.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

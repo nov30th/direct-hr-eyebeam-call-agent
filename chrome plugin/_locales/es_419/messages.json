@@ -1,0 +1,9 @@
+{
+	"currencyCode": {"message": "USD"},
+	"currencySymbol": {"message": "$"},
+	"minimumDonation": {"message": "0.50"},
+	"currencyCodeForGoogleCheckout": {"message": "USD"},
+	"currencySymbolForGoogleCheckout": {"message": "$"},
+	"minimumDonationForGoogleCheckout": {"message": "0.50"},
+	"LAST_ITEM_DO_NOT_REMOVE": {"message": "DO NOT REMOVE"}
+}

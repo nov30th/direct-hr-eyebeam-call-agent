@@ -1,0 +1,6 @@
+<?xml version="1.0" ?><Update>
+<Project Name="DirectHR_Softphone_Agent">
+<Version>1.0.0.6</Version>
+<UpdateURI>http://hoho.im/dhr/softphone.exe</UpdateURI>
+</Project>
+</Update>

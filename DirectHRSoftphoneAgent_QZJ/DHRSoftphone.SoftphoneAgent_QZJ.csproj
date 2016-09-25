@@ -1,0 +1,381 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{363D04C6-7097-461F-A379-6DC43A0F5BE0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DHRSoftphone.SoftphoneAgent_QZJ</RootNamespace>
+    <AssemblyName>DHRSoftphone.SoftphoneAgent_QZJ</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ic_launcher.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>DirectHR_Softphone.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>E762DF92A9C179F1951750C96CD0DDF799408A18</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>DirectHR Code&amp;Kernel Signing Cert.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestTimestampUrl>http://timestamp.verisign.com/scripts/timstamp.dll</ManifestTimestampUrl>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AgentDatabaseProvider.cs" />
+    <Compile Include="AgentLogs.cs" />
+    <Compile Include="AgentSettings.cs" />
+    <Compile Include="AgentUpdate.cs" />
+    <Compile Include="ContactsCSVBuilder.cs" />
+    <Compile Include="ContactsXml.cs" />
+    <Compile Include="DhrSpPluginProvider.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMeetingMembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMeetingMembers.Designer.cs">
+      <DependentUpon>FormMeetingMembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMessage.Designer.cs">
+      <DependentUpon>FormMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWelcomeScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWelcomeScreen.Designer.cs">
+      <DependentUpon>FormWelcomeScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAboutcs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAboutcs.Designer.cs">
+      <DependentUpon>FrmAboutcs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmContacts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmContacts.Designer.cs">
+      <DependentUpon>FrmContacts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmContactsCallingOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmContactsCallingOption.Designer.cs">
+      <DependentUpon>FrmContactsCallingOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmExportContacts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmExportContacts.Designer.cs">
+      <DependentUpon>FrmExportContacts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmExtensionSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmExtensionSettings.Designer.cs">
+      <DependentUpon>FrmExtensionSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmEyebeamSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEyebeamSettings.Designer.cs">
+      <DependentUpon>FrmEyebeamSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLoading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLoading.Designer.cs">
+      <DependentUpon>FrmLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMeetingRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMeetingRoom.Designer.cs">
+      <DependentUpon>FrmMeetingRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSettings.Designer.cs">
+      <DependentUpon>FrmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HttpServer.cs" />
+    <Compile Include="MeetingImagePic.cs" />
+    <Compile Include="MeetingXml.cs" />
+    <Compile Include="MyHttpServer.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QzjHttpServer.cs" />
+    <Compile Include="QzjIoCtl.cs" />
+    <Compile Include="TelephoneNumber.cs" />
+    <Compile Include="UserStatus.cs" />
+    <Compile Include="XmlUtil.cs" />
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMeetingMembers.resx">
+      <DependentUpon>FormMeetingMembers.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMessage.resx">
+      <DependentUpon>FormMessage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormWelcomeScreen.resx">
+      <DependentUpon>FormWelcomeScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAboutcs.resx">
+      <DependentUpon>FrmAboutcs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmContacts.resx">
+      <DependentUpon>FrmContacts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmContactsCallingOption.resx">
+      <DependentUpon>FrmContactsCallingOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmExportContacts.resx">
+      <DependentUpon>FrmExportContacts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmExtensionSettings.resx">
+      <DependentUpon>FrmExtensionSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEyebeamSettings.resx">
+      <DependentUpon>FrmEyebeamSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLoading.resx">
+      <DependentUpon>FrmLoading.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMeetingRoom.resx">
+      <DependentUpon>FrmMeetingRoom.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSettings.resx">
+      <DependentUpon>FrmSettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DirectHR_Softphone.snk" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="welcome.rtf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="20110811125146294_easyicon_cn_48.ico" />
+    <Content Include="20110811125150653_easyicon_cn_48.ico" />
+    <Content Include="20110811125203259_easyicon_cn_48.ico" />
+    <Content Include="20120315080153571_easyicon_cn_48.ico" />
+    <Content Include="20120719043057511_easyicon_cn_48.ico" />
+    <Content Include="20120719043300124_easyicon_cn_48.ico" />
+    <Content Include="20120719043310949_easyicon_cn_48.ico" />
+    <Content Include="20120719043357643_easyicon_cn_48.ico" />
+    <Content Include="20120719043410864_easyicon_cn_48.ico" />
+    <Content Include="cellphone_agentdatabase.dat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Images\10.png" />
+    <None Include="Images\13.png" />
+    <Content Include="ICOs\ic_launcher_144x144.ico" />
+    <Content Include="ic_launcher.ico" />
+    <Content Include="ic_launcher_144x144.ico" />
+    <Content Include="Images\20120720113555727_easyicon_cn_128.png" />
+    <None Include="Images\5.png" />
+    <None Include="Images\dsg_ %2811%29.png" />
+    <None Include="Images\icon_mail.gif" />
+    <None Include="Images\icon_mobile.gif" />
+    <None Include="Images\icon_phone.gif" />
+    <None Include="Images\icon_phone_nocolor.gif" />
+    <Content Include="Images\icon_webcam.gif" />
+    <Content Include="Images\loading %281%29.gif" />
+    <None Include="Images\stop.png" />
+    <Content Include="Plugins\DHRSoftphone.Plugins.AgentStatusUploader.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plugins\DHRSoftphone.Plugins.DNSFixer.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Plugins\DHRSoftphone.Plugins.ProcessKiller.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Server Files\Remtoe Update Description File.txt" />
+    <Content Include="ICOs\softphone_chun_160x160.ico" />
+    <Content Include="softphone_chun_160x160.ico" />
+    <Content Include="TechInfo_VincentQiu.txt" />
+    <None Include="Images\loading.gif" />
+    <None Include="Images\loading_circle.gif" />
+    <EmbeddedResource Include="20110811125212457_easyicon_cn_48.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AgentExceptions\DHRSoftphone.AgentExceptions.csproj">
+      <Project>{CF14BE5A-8FAF-4B80-99A2-D91049D736D9}</Project>
+      <Name>DHRSoftphone.AgentExceptions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DHRSoftphone.DSUserControls\DHRSoftphone.DSUserControls.csproj">
+      <Project>{9a150bf3-1162-4f33-be2a-4013f42515dd}</Project>
+      <Name>DHRSoftphone.DSUserControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DHRSoftphone.Eyebeam\DHRSoftphone.Eyebeam.csproj">
+      <Project>{AB82E5D5-FDD1-4525-91BA-647A69447CDA}</Project>
+      <Name>DHRSoftphone.Eyebeam</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IDHRSPPlugin\DHRSoftphone.IDHRSPPlugin.csproj">
+      <Project>{EC9576B9-D44D-4CB1-B4E2-03AB85DE275D}</Project>
+      <Name>DHRSoftphone.IDHRSPPlugin</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

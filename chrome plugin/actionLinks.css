@@ -1,0 +1,30 @@
+/* Transform the message table to a block (used for relative positioning) */
+table.iY {
+	display: block;
+}
+
+/* Action Links Area (level 1) */
+.iY .Bu:last-child .nH > .nH > .nH:first-child {
+	position: absolute !important;
+	top: 23px !important;
+	right: 0px!important;
+	font-size: 70% !important;
+	z-index:0 !important;
+}
+
+/* Action Links Area (level 2) */
+.iY .Bu:last-child .hj {
+	font-size: 100% !important;
+	margin: 0 auto !important;
+	float: right !important;
+	padding:0 !important;
+	position: relative;
+}
+
+/* Action Link container */
+.hk {
+	float: left !important;
+	padding:0 12px 0 0 !important;
+}
+
+.hk span {background:white}

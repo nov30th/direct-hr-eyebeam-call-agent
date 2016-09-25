@@ -1,0 +1,84 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DhrAgentDatabaseUtils", "DhrAgentDatabaseUtils\DhrAgentDatabaseUtils.csproj", "{E3C96FEC-FA35-4B76-9816-E363F07E1F86}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebSite", "WebSite\", "{6D0719E3-341A-43C5-9D5B-3A65203F6255}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{E3C96FEC-FA35-4B76-9816-E363F07E1F86}|DhrAgentDatabaseUtils.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/WebSite"
+		Debug.AspNetCompiler.PhysicalPath = "WebSite\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\WebSite\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/WebSite"
+		Release.AspNetCompiler.PhysicalPath = "WebSite\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\WebSite\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "3443"
+		VWDVirtualPath = "/"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject1", "TestProject1\TestProject1.csproj", "{58CAB2E5-28BA-472D-AD7F-A0AA72FF2B99}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C508CD24-B959-48FA-A6DE-FF57A99FE768}"
+	ProjectSection(SolutionItems) = preProject
+		DhrAgentDatabaseUtils.vsmdi = DhrAgentDatabaseUtils.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = DhrAgentDatabaseUtils.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3C96FEC-FA35-4B76-9816-E363F07E1F86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3C96FEC-FA35-4B76-9816-E363F07E1F86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3C96FEC-FA35-4B76-9816-E363F07E1F86}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{E3C96FEC-FA35-4B76-9816-E363F07E1F86}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{E3C96FEC-FA35-4B76-9816-E363F07E1F86}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E3C96FEC-FA35-4B76-9816-E363F07E1F86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3C96FEC-FA35-4B76-9816-E363F07E1F86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3C96FEC-FA35-4B76-9816-E363F07E1F86}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{E3C96FEC-FA35-4B76-9816-E363F07E1F86}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{E3C96FEC-FA35-4B76-9816-E363F07E1F86}.Release|x86.ActiveCfg = Release|Any CPU
+		{6D0719E3-341A-43C5-9D5B-3A65203F6255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D0719E3-341A-43C5-9D5B-3A65203F6255}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D0719E3-341A-43C5-9D5B-3A65203F6255}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{6D0719E3-341A-43C5-9D5B-3A65203F6255}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{6D0719E3-341A-43C5-9D5B-3A65203F6255}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6D0719E3-341A-43C5-9D5B-3A65203F6255}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D0719E3-341A-43C5-9D5B-3A65203F6255}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{6D0719E3-341A-43C5-9D5B-3A65203F6255}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{6D0719E3-341A-43C5-9D5B-3A65203F6255}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
+		{6D0719E3-341A-43C5-9D5B-3A65203F6255}.Release|x86.ActiveCfg = Debug|Any CPU
+		{58CAB2E5-28BA-472D-AD7F-A0AA72FF2B99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58CAB2E5-28BA-472D-AD7F-A0AA72FF2B99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58CAB2E5-28BA-472D-AD7F-A0AA72FF2B99}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{58CAB2E5-28BA-472D-AD7F-A0AA72FF2B99}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{58CAB2E5-28BA-472D-AD7F-A0AA72FF2B99}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{58CAB2E5-28BA-472D-AD7F-A0AA72FF2B99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58CAB2E5-28BA-472D-AD7F-A0AA72FF2B99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58CAB2E5-28BA-472D-AD7F-A0AA72FF2B99}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{58CAB2E5-28BA-472D-AD7F-A0AA72FF2B99}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{58CAB2E5-28BA-472D-AD7F-A0AA72FF2B99}.Release|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

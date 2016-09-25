@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.125" name="AgentDatabase">
+  <DataContextMoniker Name="/AgentDatabaseDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c187c3ec-5efb-42f1-ab32-702cf3852a9c" absoluteBounds="2.75, 1.5, 2, 3.1170068359374996">
+      <DataClassMoniker Name="/AgentDatabaseDataContext/LoginStatus" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f6275d1c-6ccf-4944-94ac-5277ae50edd5" absoluteBounds="2.765, 1.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3f04e142-ab4b-438d-8015-919e62957660" absoluteBounds="0.5, 2.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/AgentDatabaseDataContext/OnlineMeeting" />
+      <nestedChildShapes>
+        <elementListCompartment Id="db6e1984-0eb2-4c22-b82c-e7105dff05ae" absoluteBounds="0.51500000000000012, 2.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d6c7f9cd-fde2-4129-939e-454fa2e4c47c" absoluteBounds="0.5, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/AgentDatabaseDataContext/MeetingLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2e2400f2-de51-4ed2-b4f5-5de4b6ab0814" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6addbc89-27ba-4978-84f4-f55bc7f0396d" absoluteBounds="5, 0.5, 2, 2.5401025390625">
+      <DataClassMoniker Name="/AgentDatabaseDataContext/ProgramBlackList" />
+      <nestedChildShapes>
+        <elementListCompartment Id="78c0daaa-78ff-4cb3-8224-70732865e57f" absoluteBounds="5.015, 0.96, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c5ca592e-94b1-4c18-b903-a477e6ac537d" absoluteBounds="5, 3.25, 2, 2.3478011067708326">
+      <DataClassMoniker Name="/AgentDatabaseDataContext/ProcessKillerLog" />
+      <nestedChildShapes>
+        <elementListCompartment Id="747e775b-94ca-45e9-b44b-79d263a303a1" absoluteBounds="5.015, 3.71, 1.9700000000000002, 1.7878011067708333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8cbe14c8-9193-4284-bb0a-68c511e60d0f" absoluteBounds="0.5, 4.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/AgentDatabaseDataContext/TimePeriod" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b436cc2c-19d7-4953-acca-5ca65678cf61" absoluteBounds="0.51500000000000012, 5.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f6e2a51e-2461-4ae7-91d2-1b4332b06812" absoluteBounds="2.75, 4.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/AgentDatabaseDataContext/Hosts" />
+      <nestedChildShapes>
+        <elementListCompartment Id="17c0410e-2e73-423d-9557-160c650097f9" absoluteBounds="2.765, 5.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="535c0536-4a5a-4068-afc6-51686dd49bcc" absoluteBounds="5, 5.875, 2, 1.9631982421875">
+      <DataClassMoniker Name="/AgentDatabaseDataContext/DevelopmentUsers" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ab579f47-a46f-4827-b3f4-cb59cfff7b1c" absoluteBounds="5.015, 6.335, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a1b70ca8-100b-4766-8ff0-64a3412fb22c" absoluteBounds="0.5, 6.625, 2, 1.9631982421875">
+      <DataClassMoniker Name="/AgentDatabaseDataContext/LoginUsers" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7c79a130-42c4-47db-b879-8016ecf3fda7" absoluteBounds="0.51500000000000012, 7.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cb874298-4c9f-4923-b321-18300a56baa9" absoluteBounds="2.75, 7.125, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/AgentDatabaseDataContext/ClientOnlineTime" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8fdb2819-ed52-4e48-8e4e-b7e038dd37e0" absoluteBounds="2.765, 7.5850000000000009, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="30118535-6678-4faf-b994-05a6e6eb55dc" absoluteBounds="7.25, 0.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/AgentDatabaseDataContext/NetworkFilters" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1d00ca55-9276-4d66-8ab1-d21f020c0ed1" absoluteBounds="7.265, 0.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

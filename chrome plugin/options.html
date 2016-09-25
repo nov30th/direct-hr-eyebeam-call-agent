@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<!--
+ * Copyright (c) 2011 Jack Senechal. All rights reserved.  Use of this
+ * source code is governed by a BSD-style license that can be found in the
+ * LICENSE file.
+-->
+<!--
+ * Copyright (c) 2011 Vincent Qiu. All rights reserved.  Use of this
+ * source code is governed by a BSD-style license that can be found in the
+ * LICENSE file.
+-->
+<html>
+<head>
+    <title>Direct HR Softphone Chrome Settings - Options</title>
+    <link type="text/css" href="css/ui.all.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/ui.core.js"></script>
+    <script type="text/javascript" src="js/ui.tabs.js"></script>
+    <script type="text/javascript">
+        function toBool(str) {
+            if ("false" === str) {
+                return false;
+            } else if ("true" === str) {
+                return true;
+            } else {
+                return str;
+            }
+        }
+        function initCheckbox(option, defaultValue) {
+            var value = localStorage[option];
+            if (defaultValue == undefined) {
+                defaultValue = false;
+            }
+            value = value == null ? defaultValue : value;
+            // Because periods in the ID fields cannot read by jQuery/$ so i used old style DOM call here :)
+            var node = document.getElementById(option);
+            $(node).attr("checked", toBool(value));
+        }
+        $(function () {
+            initCheckbox("toplinks.reader", true);
+            initCheckbox("toplinks.web", true);
+            initCheckbox("toplinks.more", true);
+            initCheckbox("searchButtons", true);
+            initCheckbox("help", true);
+
+            initCheckbox("spamCount", true);
+            initCheckbox("moreLabels", true);
+            initCheckbox("chat", true);
+            initCheckbox("invites", true);
+
+            initCheckbox("actionButtons", true);
+            initCheckbox("selectAll", true);
+
+            initCheckbox("messageViewLabels", true);
+            initCheckbox("messagesDragDrop", true);
+            initCheckbox("checkBoxes", true);
+            initCheckbox("stars", true);
+            initCheckbox("currentEmailIndicator", true);
+            initCheckbox("emailHighlighting", true);
+
+            initCheckbox("gmail.actionLinks", true);
+            initCheckbox("gmail.sidebarLinks", false);
+            initCheckbox("gmail.actionLinks.iconsOnly", false);
+            initCheckbox("ads", false);
+            initCheckbox("adsGoogleApps", false);
+
+            initCheckbox("tips", true);
+            initCheckbox("currentlyUsing", true);
+            initCheckbox("accountActivity", true);
+            initCheckbox("gmailview", true);
+            initCheckbox("copyright", true);
+
+            initCheckbox("donateLink", true);
+
+            initCheckbox("hotmail.ads", false);
+
+            initCheckbox("yahoo.ads", false);
+
+            $("#donateLink").click(function (evt) {
+                if (pref("donationClicked")) {
+                    localStorage["donateLink"] = $(this).get(0).checked;
+                    $("#refresh").fadeIn();
+                } else {
+                    location.href = "donate.html";
+                    return false;
+                }
+                return true;
+            });
+
+            $("#tabs").tabs();
+            $("input[type=checkbox]").not("#donateLink").change(function () {
+                localStorage[$(this).attr("id")] = $(this).prop("checked");
+                $("#refresh").fadeIn();
+            });
+
+            $("#donate").click(function () {
+                location.href = "donate.html";
+            });
+
+        });
+    </script>
+    <style>
+        body, #tabs {
+            background: -webkit-gradient(linear, left top, left bottom, from(#eff), to(#fff), color-stop(1, #fff)) no-repeat;
+        }
+
+        .ui-widget-content {
+            border: none;
+        }
+
+        .ui-widget-header {
+            background: none;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+
+        #content {
+            font-size: 16px;
+        }
+
+        .outsideTabs {
+            margin-left: 40px;
+        }
+
+        fieldset {
+            border-radius: 15px;
+            margin: 10px;
+            padding: 15px;
+            border-color: #fff;
+            height: 80%;
+            background: white;
+            box-shadow: 2px 2px 1px gray;
+        }
+
+        legend {
+            margin: 0 auto;
+            font-weight: bold;
+        }
+
+        #donate {
+            text-align: center;
+            font-size: 17px;
+            border-radius: 15px;
+            margin: 20px auto;
+            padding: 15px;
+            background: #DDFFBC;
+            width: 540px;
+        }
+
+            #donate a {
+                text-decoration: none;
+            }
+
+                #donate a:hover {
+                    text-decoration: underline;
+                }
+
+        #refreshWrapper {
+            text-align: center;
+            position: absolute;
+            width: 300px;
+            left: 30%;
+            margin-top: -16px;
+        }
+
+        #refresh {
+            display: none;
+            margin: 0 auto;
+            width: 510px;
+            font-weight: bold;
+            font-size: 15px;
+            color: black;
+            border-radius: 15px;
+            background: yellow;
+            padding: 2px;
+        }
+
+        #top, #actions, #bottom {
+            text-align: center;
+        }
+
+            #top div, #bottom div {
+                display: inline;
+                margin-left: 30px;
+            }
+
+            #actions div {
+                display: inline;
+                margin-left: 20px;
+            }
+
+        #messages {
+            margin: 0 auto;
+            width: 300px;
+        }
+
+        #otherExtensions {
+            color: blue;
+            font-family: arial;
+            font-size: 18px;
+            text-shadow: 2px 2px 1px yellow;
+        }
+
+            #otherExtensions:hover {
+                text-decoration: underline;
+                text-shadow: 2px 2px 1px orange;
+            }
+    </style>
+    <style>
+        body {
+            font-family: helvetica, arial, sans-serif;
+            font-size: 80%;
+            margin: 10px;
+        }
+
+        #header {
+            padding-bottom: 1.5em;
+            padding-top: 1.5em;
+        }
+
+            #header h1 {
+                font-size: 156%;
+                display: inline;
+                padding-bottom: 43px;
+                padding-left: 75px;
+                padding-top: 40px;
+                background: url(skype-128.png) no-repeat;
+                background-size: 67px;
+                background-position: 1px 18px;
+            }
+
+        #footer {
+            margin-left: 24px;
+            margin-top: 12px;
+        }
+
+        .settings-content {
+            margin: 6px 6px 0 6px;
+            padding: 10px 10px 10px 10px;
+            color: #333;
+            border: 1px solid #dedede;
+            -webkit-border-radius: 5px 5px;
+        }
+
+        .settings-table {
+            width: 100%;
+            font-size: 1em;
+        }
+
+            .settings-table .left, .settings-table .right {
+                vertical-align: top;
+                border-bottom: 0 dotted #aaa;
+            }
+
+            .settings-table th {
+                text-align: right;
+                width: 1%;
+                white-space: nowrap;
+                padding: 12px 24px 12px 12px;
+            }
+
+            .settings-table td {
+                width: 99%;
+                white-space: nowrap;
+                padding: 12px;
+            }
+
+            .settings-table textarea {
+                width: 100%;
+                height: 5em;
+            }
+
+        .settings-tip {
+            color: #444;
+            font-size: 11px;
+        }
+    </style>
+    <script type="text/javascript" src="options.js"></script>
+</head>
+<body>
+    <div id="header">Direct HR Softphone Browser Plugin</div>
+    <div>This plugin is for Google Chrome browser, will underlink all telephone numbers,
+        also will remove the ADs in Gmail, Yahoo, and Hotmail pages.</div>
+    <div>If you do not need to underlink some pages, please add below text into that page
+        in head section.<strong><pre>&lt;meta name=&quot;directhr_telephone_plugin&quot; content=&quot;[disabled]&quot; /&gt;</pre>
+        </strong></div>
+    <div id="footer">Author: Vincent Qiu <a href="mailto:v.qiu@directhr.cn">Email to Vincent
+        Qiu</a></div>
+    <div style="text-align: center; padding-bottom: 10px; position: absolute; top: 4px;
+        right: 3px">
+        <a href="donate.html" msg="contributeToContinue">Donate</a>&bull; <a href="http://jasonsavard.com/wiki/Webmail_Ad_Blocker"
+            msg="contactHelp">Contact &bull; Help</a>
+    </div>
+    <br>
+    <br>
+    <!--<div style="text-align:center">
+	<a id="otherExtensions" ga="otherExtensionsFromOptions" href="https://chrome.google.com/webstore/detail/oeopbcgkkoapgobdbedcemjljbihmemj?ref=WABChrome"><img style="margin-right:10px;vertical-align:middle" src="images/gmail.png"/><span msgxxx="writeAboutMe">Try my Checker Plus for Gmail!</span></a>
+</div>-->
+    <div id="tabs">
+        <ul>
+            <li><a href="#tabs-1">Gmail</a></li>
+            <li><a href="#tabs-2">Hotmail</a></li>
+            <li><a href="#tabs-3">Yahoo Mail</a></li>
+        </ul>
+        <div id="content">
+            <div class="outsideTabs" style="margin-top: 10px">Select what you want to <b>see</b>
+                ...</div>
+            <div id="refreshWrapper">
+                <div id="refresh">Changed saved!<br>
+                    You must refresh your impacted webpage to see the them</div>
+            </div>
+            <br>
+            <!--fieldset id="top">
+			<legend>Top</legend>
+			<div><input type="checkbox" id="donateLink"> 'Webmail Ad Blocker' link</div>
+		</fieldset-->
+    <div id="tabs-1">
+        <div style="height: 260px">
+            <div style="float: left; height: 100%; width: 18%">
+                <fieldset>
+                    <legend>Left</legend>
+                    <div>
+                        <input type="checkbox" id="spamCount">
+                        Spam count</div>
+                    <div>
+                        <input type="checkbox" id="moreLabels">
+                        # more</div>
+                    <br>
+                    <div>
+                        <input type="checkbox" id="chat">
+                        Chat</div>
+                    <div>
+                        <input type="checkbox" id="invites">
+                        Invite a friend</div>
+                </fieldset>
+            </div>
+            <div style="float: left; width: 62%">
+                <fieldset id="actions">
+                    <legend>Actions</legend>
+                    <div>
+                        <input type="checkbox" disabled>
+                        <a href="javascript:alert('Use Gmail \'Settings\' then go to \'Web Clips\' tab to disable this!')">
+                            Web clips</a></div>
+                </fieldset>
+                <fieldset id="messagesWrapper">
+                    <legend>Messages</legend>
+                    <div id="messages">
+                        <div>
+                            <input type="checkbox" id="messageViewLabels">
+                            Labels (ie. Inbox)</div>
+                        <div>
+                            <input type="checkbox" id="messagesDragDrop">
+                            Drag drop area</div>
+                        <div>
+                            <input type="checkbox" id="checkBoxes">
+                            Checkboxes</div>
+                        <div>
+                            <input type="checkbox" id="stars">
+                            Stars</div>
+                        <div>
+                            <input type="checkbox" id="currentEmailIndicator">
+                            Current email indicator '&gt'</div>
+                        <div>
+                            <input type="checkbox" id="emailHighlighting">
+                            Highlight on mouseover</div>
+                    </div>
+                </fieldset>
+            </div>
+            <div style="float: left; height: 100%; width: 20%">
+                <fieldset>
+                    <legend>Right</legend>
+                    <!--div style="background:gray">
+							<span style="color:yellow">Temporarily disabled to fix the Gmail's people gadget</span>
+							<div><input type="checkbox" id="gmail.actionLinks"> Move Action Links<br><span style="color:gray;font-size:10px">(New window, Print all etc.)</span></div>
+							<div><input type="checkbox" id="gmail.sidebarLinks"> Move Sidebar Links<br><span style="color:gray;font-size:10px">(Map, Calendar, Packages etc.)</span></div>
+						</div-->
+                    <!--div><input type="checkbox" id="gmail.actionLinks.iconsOnly"> Icons only in Action Links</div-->
+                    <br>
+                    <div>
+                        <input type="checkbox" id="ads">
+                        <a target="_blank" style="color: blue" href="http://mail.google.com/support/bin/answer.py?answer=1251806">
+                            People Widget</a><span style="font-size: 11px">*Uncheck this to remove all of the right
+                                side</span></div>
+                    <!--div><input type="checkbox" id="adsGoogleApps"> People Widget <span style="font-size:70%;color:gray">(Gmail Google Apps)</span></div-->
+                </fieldset>
+            </div>
+        </div>
+        <fieldset id="bottom">
+            <legend>Bottom</legend>
+            <!--div><input type="checkbox" id="tips"> Tips</div-->
+            <!--div><input type="checkbox" id="currentlyUsing"> Currently using...</div-->
+            <div>
+                <input type="checkbox" id="accountActivity">
+                Account info</div>
+            <!--div><input type="checkbox" id="gmailview"> Gmail view</div-->
+            <!--div><input type="checkbox" id="copyright"> Copyright</div-->
+        </fieldset>
+    </div>
+    <div id="tabs-2">
+        <fieldset>
+            <legend>Right side</legend>
+            <input type="checkbox" id="hotmail.ads">
+            Advertisements
+        </fieldset>
+    </div>
+    <div id="tabs-3">
+        <fieldset>
+            <legend>Right side</legend>
+            <input type="checkbox" id="yahoo.ads">
+            Advertisements
+        </fieldset>
+    </div>
+    </div> </div>
+    <!--
+<body onload="loadOptions();">
+    <div id="header">
+        <h1>Direct HR Softphone Chrome Settings</h1>
+    </div>
+    <form name="skypelinks">
+    <div class="settings-content">
+        <table class="settings-table" id="settings-voicemail-content">
+            <!--   <tr>
+            <th class="left">Link Type</th>
+            <td class="right">
+              <select id="linkType">
+                <option value="sip:">sip:</option>
+                <option value="skype:">skype:</option>
+              </select>
+              <label for="linkType">Select the type of link to create.</label>
+            </td>
+          </tr>
+            <tr>
+                <th class="left">International Number Regex</th>
+                <td class="right">
+                    <textarea id="intlRegex"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <th class="left">International Number Replacement</th>
+                <td class="right">
+                    <input type="text" id="intlReplacement" />
+                </td>
+            </tr>
+             <tr>
+            <th class="left">Domestic Number Regex</th>
+            <td class="right">
+              <textarea id="homeRegex"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <th class="left">Domestic Number Replacement</th>
+            <td class="right">
+              <input type="text" id="homeReplacement"/>
+            </td>
+          </tr>
+          <tr>
+            <th class="left">Clear Extension Data</th>
+            <td class="right">
+                <button onclick="clearData()">Clear Data and Reset To Default Values</button>
+                <span class="settings-tip">Try this if the extension isn't updating data correctly.
+                </span></td>
+            </tr>
+        </table>
+    </div>
+    </form>
+    <div id="footer">
+        <button id="save-button" style="font-weight: bold" onclick="saveOptions()">Save</button>
+        <span id="status" style="margin-left: 10px; color: #0e5ecf; font-weight: bold;">
+        </span>
+    </div>-->
+</body>
+</html>

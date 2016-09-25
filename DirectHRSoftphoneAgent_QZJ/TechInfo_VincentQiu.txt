@@ -1,0 +1,9 @@
+﻿http://hoho.im/dhr/Update.xml?
+
+
+UserStatus Url:
+
+Expected Response:
+<StatusCode>
+200
+</StatusCode>

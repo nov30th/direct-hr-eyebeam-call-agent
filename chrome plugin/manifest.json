@@ -1,0 +1,31 @@
+{
+  "name" : "Click to Dial",
+  "version" : "0.4.0",
+  "description" : "Make links out of phone numbers on the page, so you can click them to dial with DHR Softphone",
+  "background_page" : "background.html",
+  "options_page": "options.html",
+  "default_locale": "en",
+  "page_action" :
+  {
+    "default_icon" : "dhrclickcall-19.png",
+    "default_title" : "Phone numbers were linked on this page"
+  },
+  "content_scripts" : [
+    {
+      "matches" : [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js" : ["js/jquery-1.6.2.min.js", "js/common.js", "js/webmailAdBlocker.js", "jquery.ba-replacetext.min.js", "contentscript.js"],
+      "run_at": "document_end",
+      "all_frames" : true
+    }
+  ],
+  "icons" : {
+    "128" : "dhrclickcall-128.png"
+  },
+  "permissions" : [
+    "contextMenus",
+    "tabs"
+   ]
+}
